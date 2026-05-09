@@ -1,7 +1,11 @@
 const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
-require('dotenv').config({ path: __dirname + '/.env' });
+
+// Only load .env file locally (for development)
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config({ path: __dirname + '/.env' });
+}
 
 const db = require('./config/db');
 const authRoutes = require('./routes/auth');
