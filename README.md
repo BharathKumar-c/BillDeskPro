@@ -6,7 +6,7 @@ A complete billing and invoicing solution for small to medium businesses.
 
 - **Frontend**: React 18, React Router, Recharts
 - **Backend**: Node.js, Express.js
-- **Database**: MySQL 8.x
+- **Database**: MySQL 8.x (Xampp)
 
 ## Prerequisites
 
