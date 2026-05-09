@@ -10,15 +10,17 @@ services:
       - key: NODE_ENV
         value: production
       - key: DB_HOST
-        value: YOUR_AIVEN_HOST
+        value: ${DB_HOST}
       - key: DB_PORT
-        value: 21863
+        value: ${DB_PORT}
       - key: DB_USER
-        value: YOUR_AIVEN_USER
+        value: ${DB_USER}
       - key: DB_PASSWORD
-        value: YOUR_AIVEN_PASSWORD
+        value: ${DB_PASSWORD}
       - key: DB_NAME
-        value: defaultdb
+        value: ${DB_NAME}
+      - key: DB_FORCE_SSL
+        value: "true"
       - key: JWT_SECRET
         value: billdeskpro_secret_key_2026
       - key: JWT_EXPIRE
