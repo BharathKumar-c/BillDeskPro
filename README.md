@@ -1,4 +1,4 @@
-# BillDeskPro - Web-Based Billing System
+# BillDesk-Pro - Web-Based Billing System
 
 A complete billing and invoicing solution for small to medium businesses.
 
