@@ -273,6 +273,16 @@ BillDeskPro/
 
 ---
 
+## Screenshots
+
+### Dashboard
+![Dashboard](docs/screenshots/Dashboard.png)
+
+### Products
+![Products](docs/screenshots/Products.png)
+
+---
+
 ## Deployment
 
 ### Deploy to Render (Cloud Hosting)
