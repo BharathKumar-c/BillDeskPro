@@ -1,9 +1,9 @@
 services:
   - type: web
     name: billdeskpro-server
-    env: node
-    buildCommand: cd server && npm install
-    startCommand: cd server && npm start
+    runtime: node
+    buildCommand: npm install
+    startCommand: npm start
     envVars:
       - key: PORT
         value: 10000
