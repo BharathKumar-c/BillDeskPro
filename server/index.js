@@ -13,6 +13,7 @@ const productRoutes = require('./routes/products');
 const customerRoutes = require('./routes/customers');
 const invoiceRoutes = require('./routes/invoices');
 const reportRoutes = require('./routes/reports');
+const setupRoutes = require('./routes/setup');
 
 const app = express();
 
@@ -25,6 +26,7 @@ app.use('/api/v1/products', productRoutes);
 app.use('/api/v1/customers', customerRoutes);
 app.use('/api/v1/invoices', invoiceRoutes);
 app.use('/api/v1/reports', reportRoutes);
+app.use('/api/v1/setup', setupRoutes);
 
 // Health check with database test
 app.get('/', async (req, res) => {
