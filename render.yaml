@@ -2,8 +2,8 @@ services:
   - type: web
     name: billdeskpro-server
     runtime: node
-    buildCommand: npm install
-    startCommand: npm start
+    buildCommand: cd server && npm install
+    startCommand: cd server && npm start
     envVars:
       - key: PORT
         value: 10000
@@ -25,3 +25,14 @@ services:
         value: billdeskpro_secret_key_2026
       - key: JWT_EXPIRE
         value: 8h
+
+  - type: web
+    name: billdeskpro-frontend
+    runtime: node
+    buildCommand: cd client && npm install && npm run build
+    startCommand: npx serve -s client/build -l $PORT
+    envVars:
+      - key: REACT_APP_API_URL
+        value: https://billdeskpro-server.onrender.com/api/v1
+      - key: NODE_ENV
+        value: production
