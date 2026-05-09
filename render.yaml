@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: billdeskpro-server
+    env: node
+    rootDir: server
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: DB_HOST
+        value: your-mysql-host
+      - key: DB_USER
+        value: your-mysql-user
+      - key: DB_PASSWORD
+        value: your-mysql-password
+      - key: DB_NAME
+        value: billing_system_db
+      - key: JWT_SECRET
+        value: your-secret-key
+      - key: JWT_EXPIRE
+        value: 8h

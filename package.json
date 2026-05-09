@@ -1,0 +1,13 @@
+{
+  "name": "billdeskpro",
+  "version": "1.0.0",
+  "description": "Web-Based Billing System",
+  "scripts": {
+    "start": "node server/index.js",
+    "build": "cd client && npm install && npm run build",
+    "install:all": "npm install && cd server && npm install && cd ../client && npm install"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

@@ -6,6 +6,8 @@ client/node_modules/
 .env
 .env.local
 .env.*.local
+client/.env
+client/.env.local
 
 # Build outputs
 client/build/
