@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s -X POST http://localhost:5000/api/v1/auth/login -H \"Content-Type: application/json\" -d \"{\\\\\"username\\\\\":\\\\\"admin\\\\\",\\\\\"password\\\\\":\\\\\"admin123\\\\\"}\")",
+      "Bash(node -e \"const bcrypt = require\\('bcryptjs'\\); console.log\\(bcrypt.hashSync\\('admin123', 10\\)\\);\")",
+      "Bash(\"C:/xampp/mysql/bin/mysql.exe\" -u root -e \"UPDATE billing_system_db.users SET password_hash = '\\\\$2a\\\\$10\\\\$5bgcJU4nhfkjgIRWNftQYuOhsOrCqnynAHiKsSNtx7nqaAaUCkcOq' WHERE username = 'admin';\")",
+      "Bash(\"C:/xampp/mysql/bin/mysql.exe\" -u root -e \"INSERT INTO billing_system_db.products \\(product_name, sku, category, unit_price, stock_quantity, unit_of_measure\\) VALUES \\('Pen', 'PEN001', 'Stationery', 10.00, 100, 'piece'\\), \\('Notebook', 'NB001', 'Stationery', 50.00, 50, 'piece'\\), \\('Pencil', 'PNC001', 'Stationery', 5.00, 200, 'piece'\\), \\('Eraser', 'ERS001', 'Stationery', 3.00, 150, 'piece'\\), \\('Scale', 'SCL001', 'Stationery', 15.00, 80, 'piece'\\);\")",
+      "Bash(\"C:/xampp/mysql/bin/mysql.exe\" -u root -e \"SELECT COUNT\\(*\\) as cnt FROM billing_system_db.products; SELECT COUNT\\(*\\) as cnt FROM billing_system_db.customers;\")",
+      "Bash(curl -s http://localhost:5000/)",
+      "Bash(npm run *)",
+      "Bash(git add *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000)",
+      "Bash(netstat -ano)",
+      "Bash(findstr :5000)",
+      "Bash(git commit *)",
+      "Bash(git push *)",
+      "PowerShell(Get-NetTCPConnection -LocalPort 5000 -ErrorAction SilentlyContinue | Select-Object OwningProcess | ForEach-Object { Stop-Process -Id $_.OwningProcess -Force -ErrorAction SilentlyContinue })",
+      "Bash(git pull *)"
+    ]
+  }
+}
