@@ -11,16 +11,18 @@ const Dashboard = () => {
 
   const fetchData = async () => {
     try {
-      const [productsRes, customersRes, invoicesRes] = await Promise.all([
+      const [productsRes, customersRes, invoicesRes, allInvoicesRes] = await Promise.all([
         api.get('/products?limit=100'),
         api.get('/customers?limit=100'),
-        api.get('/invoices?limit=5')
+        api.get('/invoices?limit=5'),
+        api.get('/invoices?limit=1000')
       ]);
+      const totalRevenue = allInvoicesRes.data.invoices?.reduce((sum, inv) => sum + (parseFloat(inv.grand_total) || 0), 0) || 0;
       setStats({
         total_products: productsRes.data.total || 0,
         total_customers: customersRes.data.total || 0,
         total_invoices: invoicesRes.data.total || 0,
-        total_revenue: invoicesRes.data.invoices?.reduce((sum, inv) => sum + (inv.grand_total || 0), 0) || 0
+        total_revenue: totalRevenue
       });
       setRecentInvoices(invoicesRes.data.invoices || []);
     } catch (err) { console.error(err); }
