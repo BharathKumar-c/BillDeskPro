@@ -14,7 +14,7 @@ const pool = mysql.createPool({
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0,
-  ssl: process.env.NODE_ENV === 'production' ? 'Amazon RDS' : undefined
+  ssl: process.env.NODE_ENV === 'production' ? {} : undefined
 });
 
 const promisePool = pool.promise();
